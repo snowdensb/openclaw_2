@@ -1,3 +1,4 @@
+const path = require('path')
 import { execFileSync } from "node:child_process";
 import crypto from "node:crypto";
 import fs from "node:fs";
@@ -50,6 +51,11 @@ const loadAuthProfiles = (agentId: string) => {
     process.env.CLAWDBOT_STATE_DIR?.trim() ||
     path.join(os.homedir(), ".openclaw");
   const authPath = path.join(stateRoot, "agents", agentId, "agent", "auth-profiles.json");
+  const resolvedAuthPath = path.resolve(authPath);
+  const expectedDir = path.resolve(stateRoot, 'agents', agentId, 'agent');
+  if (!resolvedAuthPath.startsWith(expectedDir)) {
+      throw new Error('Invalid path');
+  }
   if (!fs.existsSync(authPath)) {
     throw new Error(`Missing: ${authPath}`);
   }
