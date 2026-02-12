@@ -1,3 +1,4 @@
+import * as path from 'path';
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
@@ -23,7 +24,12 @@ function isExecutable(filePath: string): boolean {
 
 function isDirectory(dirPath: string): boolean {
   try {
-    return fs.statSync(dirPath).isDirectory();
+    const resolvedPath = path.resolve(dirPath);
+    const expectedDir = path.resolve(process.cwd()); // TODO: Change this to your expected directory
+    if (!resolvedPath.startsWith(expectedDir)) {
+        throw new Error('Invalid directory path');
+    }
+    return fs.statSync(resolvedPath).isDirectory();
   } catch {
     return false;
   }
