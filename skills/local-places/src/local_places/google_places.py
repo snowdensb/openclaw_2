@@ -1,3 +1,4 @@
+from urllib.parse import urlparse
 from __future__ import annotations
 
 import logging
@@ -98,6 +99,15 @@ def _request(
     method: str, url: str, payload: dict[str, Any] | None, field_mask: str
 ) -> _GoogleResponse:
     try:
+        # Define allowed domains, TODO: add allowed domains here
+        allowed_domains = {"example.com", "api.example.com"}
+        try:
+            parsed_url = urlparse(url)
+            if parsed_url.hostname not in allowed_domains:
+                raise ValueError("Invalid or disallowed URL")
+        except Exception:
+            raise ValueError("Malformed URL")
+        
         with httpx.Client(timeout=10.0) as client:
             response = client.request(
                 method=method,
