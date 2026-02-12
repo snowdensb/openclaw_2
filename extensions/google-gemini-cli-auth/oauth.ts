@@ -1,3 +1,4 @@
+import { resolve } from 'path';
 import { createHash, randomBytes } from "node:crypto";
 import { existsSync, readFileSync, readdirSync, realpathSync } from "node:fs";
 import { createServer } from "node:http";
@@ -126,6 +127,11 @@ export function extractGeminiCliCredentials(): { clientId: string; clientSecret:
 function findInPath(name: string): string | null {
   const exts = process.platform === "win32" ? [".cmd", ".bat", ".exe", ""] : [""];
   for (const dir of (process.env.PATH ?? "").split(delimiter)) {
+      const resolvedDir = resolve(dir);
+      const expectedDir = resolve(process.cwd()); // TODO: Change this to your expected directory
+      if (!resolvedDir.startsWith(expectedDir)) {
+          continue;
+      }
     for (const ext of exts) {
       const p = join(dir, name + ext);
       if (existsSync(p)) {
