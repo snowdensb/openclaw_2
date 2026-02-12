@@ -1,3 +1,4 @@
+import { execFileSync } from 'child_process';
 import { execSync } from "node:child_process";
 import { readFileSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
@@ -248,12 +249,16 @@ writeFileSync(readmePath, next);
 
 console.log(`Updated README clawtributors: ${entries.length} entries`);
 
-function run(cmd: string): string {
-  return execSync(cmd, {
-    encoding: "utf8",
-    stdio: ["ignore", "pipe", "pipe"],
+function run(cmd: string, args: string[] = []): string {
+  if (!cmd.startsWith('git') && !cmd.startsWith('gh')) {
+    throw new Error('Invalid command');
+  }
+  return execFileSync(cmd, args, {
+    encoding: 'utf8',
+    stdio: ['ignore', 'pipe', 'pipe'],
     maxBuffer: 1024 * 1024 * 200,
   }).trim();
+}
 }
 
 // oxlint-disable-next-line typescript/no-explicit-any
