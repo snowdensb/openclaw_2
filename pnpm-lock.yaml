@@ -11,7 +11,7 @@ overrides:
   hono: 4.11.9
   qs: 6.14.1
   '@sinclair/typebox': 0.34.48
-  tar: 7.5.7
+  tar: 7.5.9
   tough-cookie: 4.1.4
 
 importers:
@@ -163,8 +163,8 @@ importers:
         specifier: 0.1.7-alpha.2
         version: 0.1.7-alpha.2
       tar:
-        specifier: 7.5.7
-        version: 7.5.7
+        specifier: 7.5.9
+        version: 7.5.9
       tslog:
         specifier: ^4.10.2
         version: 4.10.2
@@ -694,6 +694,7 @@ packages:
   '@aws-sdk/middleware-websocket@3.972.3':
     resolution: {integrity: sha512-/BjMbtOM9lsgdNgRZWUL5oCV6Ocfx1vcK/C5xO5/t/gCk6IwR9JFWMilbk6K6Buq5F84/lkngqcCKU2SRkAmOg==}
     engines: {node: '>= 14.0.0'}
+    deprecated: Please update your @aws-sdk client to a more recent version, such as https://github.com/aws/aws-sdk-js-v3/releases/tag/v3.982.0, if using browser-based WebSocket bidirectional streaming.
 
   '@aws-sdk/nested-clients@3.980.0':
     resolution: {integrity: sha512-/dONY5xc5/CCKzOqHZCTidtAR4lJXWkGefXvTRKdSKMGaYbbKsxDckisd6GfnvPSLxWtvQzwgRGRutMRoYUApQ==}
@@ -3152,6 +3153,7 @@ packages:
   basic-ftp@5.1.0:
     resolution: {integrity: sha512-RkaJzeJKDbaDWTIPiJwubyljaEPwpVWkm9Rt5h9Nd6h7tEXTJ3VB4qxdZBioV7JO5yLUaOKwz7vDOzlncUsegw==}
     engines: {node: '>=10.0.0'}
+    deprecated: Security vulnerability fixed in 5.2.0, please upgrade
 
   bcrypt-pbkdf@1.0.2:
     resolution: {integrity: sha512-qeFIXtP4MSoi6NLqO12WfqARWWuCKi2Rn/9hJLEmtB5yTNr9DqFWkJRCf2qShWzPeAMRnOgCrq0sg/KLv5ES9w==}
@@ -5211,8 +5213,8 @@ packages:
     resolution: {integrity: sha512-iK5/YhZxq5GO5z8wb0bY1317uDF3Zjpha0QFFLA8/trAoiLbQD0HUbMesEaxyzUgDxi2QlcbM8IvqOlEjgoXBA==}
     engines: {node: '>=12.17'}
 
-  tar@7.5.7:
-    resolution: {integrity: sha512-fov56fJiRuThVFXD6o6/Q354S7pnWMJIVlDBYijsTNx6jKSE4pvrDTs6lUnmGvNyfJwFQQwWy3owKz1ucIhveQ==}
+  tar@7.5.9:
+    resolution: {integrity: sha512-BTLcK0xsDh2+PUe9F6c2TlRp4zOOBMTkoQHQIWSIzI0R7KG46uEwq4OPk2W7bZcprBMsuaeFsqwYr7pjh6CuHg==}
     engines: {node: '>=18'}
 
   thenify-all@1.6.0:
@@ -6674,7 +6676,7 @@ snapshots:
 
   '@larksuiteoapi/node-sdk@1.58.0':
     dependencies:
-      axios: 1.13.4
+      axios: 1.13.4(debug@4.4.3)
       lodash.identity: 3.0.0
       lodash.merge: 4.6.2
       lodash.pickby: 4.6.0
@@ -6690,7 +6692,7 @@ snapshots:
     dependencies:
       '@types/node': 24.10.9
     optionalDependencies:
-      axios: 1.13.4
+      axios: 1.13.4(debug@4.4.3)
     transitivePeerDependencies:
       - debug
 
@@ -6892,7 +6894,7 @@ snapshots:
       '@azure/core-auth': 1.10.1
       '@azure/msal-node': 3.8.6
       '@microsoft/agents-activity': 1.2.3
-      axios: 1.13.4
+      axios: 1.13.4(debug@4.4.3)
       jsonwebtoken: 9.0.3
       jwks-rsa: 3.2.2
       object-path: 0.11.8
@@ -7724,7 +7726,7 @@ snapshots:
       '@slack/types': 2.19.0
       '@slack/web-api': 7.13.0
       '@types/express': 5.0.6
-      axios: 1.13.4
+      axios: 1.13.4(debug@4.4.3)
       express: 5.2.1
       path-to-regexp: 8.3.0
       raw-body: 3.0.2
@@ -7770,7 +7772,7 @@ snapshots:
       '@slack/types': 2.19.0
       '@types/node': 25.2.0
       '@types/retry': 0.12.0
-      axios: 1.13.4
+      axios: 1.13.4(debug@4.4.3)
       eventemitter3: 5.0.4
       form-data: 2.5.4
       is-electron: 2.2.2
@@ -8664,14 +8666,6 @@ snapshots:
 
   aws4@1.13.2: {}
 
-  axios@1.13.4:
-    dependencies:
-      follow-redirects: 1.15.11
-      form-data: 2.5.4
-      proxy-from-env: 1.1.0
-    transitivePeerDependencies:
-      - debug
-
   axios@1.13.4(debug@4.4.3):
     dependencies:
       follow-redirects: 1.15.11(debug@4.4.3)
@@ -8840,7 +8834,7 @@ snapshots:
       npmlog: 6.0.2
       rc: 1.2.8
       semver: 7.7.3
-      tar: 7.5.7
+      tar: 7.5.9
       url-join: 4.0.1
       which: 2.0.2
       yargs: 17.7.2
@@ -9246,8 +9240,6 @@ snapshots:
       array-back: 3.1.0
 
   flatbuffers@24.12.23: {}
-
-  follow-redirects@1.15.11: {}
 
   follow-redirects@1.15.11(debug@4.4.3):
     optionalDependencies:
@@ -11034,7 +11026,7 @@ snapshots:
       array-back: 6.2.2
       wordwrapjs: 5.1.1
 
-  tar@7.5.7:
+  tar@7.5.9:
     dependencies:
       '@isaacs/fs-minipass': 4.0.1
       chownr: 3.0.0
