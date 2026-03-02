@@ -99,7 +99,7 @@ dependencies {
   implementation("com.google.android.material:material:1.13.0")
 
   implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2")
-  implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.9.0")
+  implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.10.0")
 
   implementation("androidx.security:security-crypto:1.1.0")
   implementation("androidx.exifinterface:exifinterface:1.4.2")
@@ -117,8 +117,8 @@ dependencies {
 
   testImplementation("junit:junit:4.13.2")
   testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.10.2")
-  testImplementation("io.kotest:kotest-runner-junit5-jvm:6.0.7")
-  testImplementation("io.kotest:kotest-assertions-core-jvm:6.1.3")
+  testImplementation("io.kotest:kotest-runner-junit5-jvm:6.1.4")
+  testImplementation("io.kotest:kotest-assertions-core-jvm:6.1.4")
   testImplementation("org.robolectric:robolectric:4.16.1")
   testRuntimeOnly("org.junit.vintage:junit-vintage-engine:6.0.2")
 }
