@@ -161,7 +161,7 @@
     "@types/proper-lockfile": "^4.1.4",
     "@types/qrcode-terminal": "^0.12.2",
     "@types/ws": "^8.18.1",
-    "@typescript/native-preview": "7.0.0-dev.20260202.1",
+    "@typescript/native-preview": "7.0.0-dev.20260707.2",
     "@vitest/coverage-v8": "^4.0.18",
     "lit": "^3.3.2",
     "ollama": "^0.6.3",
@@ -184,11 +184,11 @@
   "engines": {
     "node": ">=22.12.0"
   },
-  "packageManager": "pnpm@10.23.0",
+  "packageManager": "pnpm@10.34.5",
   "pnpm": {
     "minimumReleaseAge": 2880,
     "overrides": {
-      "fast-xml-parser": "5.3.4",
+      "fast-xml-parser": "5.11.1",
       "form-data": "2.5.4",
       "@hono/node-server>hono": "4.11.9",
       "hono": "4.11.9",
